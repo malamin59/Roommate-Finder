@@ -8,7 +8,7 @@ import { auth } from '../../firebase/firebase';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const { createUser, provider , setUser} = use(AuthContext);
+    const { createUser, provider, setUser, updateUser } = use(AuthContext);
     const registerWithPopUp = () => {
         signInWithPopup(auth, provider)
             .then(result => {
@@ -30,11 +30,25 @@ const Register = () => {
         const formData = new FormData(form);
         const email = formData.get('email');
         const password = formData.get('password');
+        const name = formData.get('name');
+        const photo = formData.get('photo')
+
         const usersData = Object.fromEntries(formData.entries());
-              const hasUppercase = /[A-Z]/.test(password);
+        console.log(usersData)
+        const hasUppercase = /[A-Z]/.test(password);
         const hasLowercase = /[a-z]/.test(password);
         const isLongEnough = password.length >= 6;
-
+        fetch('http://localhost:4000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(usersData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
         if (!isLongEnough) {
             toast.error("Password must be at least 6 characters long.");
             return;
@@ -52,9 +66,13 @@ const Register = () => {
         //  console.log(usersData)
         createUser(email, password)
             .then(result => {
+                updateUser({
+                    displayName: name,
+                    photoURL: photo
+                })
                 const user = result.user
-               setUser(user);
-               console.log(user)
+                setUser(user);
+                console.log(user)
                 navigate('/')
                 Swal.fire({
                     title: "Register Successfully",
@@ -75,7 +93,6 @@ const Register = () => {
                     <form onSubmit={handleRegister}>
                         <label className="label">Name</label>
                         <input type="text" name='name' className="input" placeholder="Name" />
-
                         <label className="label">Photo URL</label>
                         <input type="text" name='photo' className="input" placeholder="Photo URL" />
 
@@ -90,9 +107,9 @@ const Register = () => {
                                 type='button' className="btn  font-black w-full mt-4">
                                 <FcGoogle size={24} /> Login in with Google</button> */}
                         <button onClick={registerWithPopUp}
-                        className='text-center btn  w-full mt-3'>
+                            className='text-center btn  w-full mt-3'>
                             <FcGoogle size={24} /> Sign in With Google  </button>
-                        <button 
+                        <button
                             type='submit' className="btn btn-neutral mt-2 w-full">
                             Register</button>
                         <p className='text-center font-semibold pt-5'>Already Have An Account?

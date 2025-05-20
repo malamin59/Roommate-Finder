@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FiHome, FiUsers, FiPhone, FiUser } from 'react-icons/fi';
+import { AuthContext } from '../../Context/AuthContext';
 
 const AddListing = () => {
-    const userName = "John Doe";
-    const userEmail = "john@example.com";
+    const { user } = use(AuthContext);
+const userName = user?.displayName || "noname";
+const userEmail = user?.email || "No email";
+    console.log(user)
+    console.log(user.email)
+    // const userName = "John Doe";
+    // const userEmail = "john@example.com";
 
     const handleAddListing = (e) => {
         e.preventDefault();
@@ -17,8 +23,8 @@ const AddListing = () => {
             description: form.description.value,
             contact: form.countryCode.value + form.contactNumber.value,
             availability: form.availability.value,
-            userEmail,
-            userName
+            // userEmail,
+            // userName
         };
         console.log(listingData);
         alert("✅ Listing submitted successfully!");

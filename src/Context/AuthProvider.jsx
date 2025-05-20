@@ -6,6 +6,7 @@ import {
     GoogleAuthProvider,
     onAuthStateChanged,
     signOut,
+    updateProfile,
 } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 const provider = new GoogleAuthProvider();
@@ -28,6 +29,10 @@ const AuthProvider = ({ children }) => {
     const logOut = () => {
        return signOut(auth)
     }
+    // profile update 
+      const updateUser = (updatedData) => {
+        return updateProfile(auth.currentUser, updatedData)
+    }
 
     useEffect(() => {
         const unsubscribe =
@@ -47,7 +52,8 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         loading,
-        setLoading
+        setLoading, 
+        updateUser
     }
 
     return (

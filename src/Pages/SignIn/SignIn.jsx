@@ -17,7 +17,7 @@ const SignIn = () => {
     const handleGoogleSignIn = () => {
           signInWithPopup(auth,provider )
           .then(result => {
-            console.log(result.user)
+            console.log(result)
             navigate('/')
           })
           .catch(error => {

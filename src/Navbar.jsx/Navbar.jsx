@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
-import UserIcon from '../assets/userIcon.png'
+import UserIcon from '../assets/NavbarIcon.webp'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
