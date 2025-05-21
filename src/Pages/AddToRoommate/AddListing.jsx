@@ -1,13 +1,14 @@
 import React, { use } from 'react';
 import { FiHome, FiUsers, FiPhone, FiUser } from 'react-icons/fi';
 import { AuthContext } from '../../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const AddListing = () => {
     const { user } = use(AuthContext);
-const userName = user?.displayName || "noname";
-const userEmail = user?.email || "No email";
-    console.log(user)
-    console.log(user.email)
+    const userName = user?.displayName || "noname";
+    const userEmail = user?.email || "No email";
+    // console.log(user)
+    // console.log(user.email)
     // const userName = "John Doe";
     // const userEmail = "john@example.com";
 
@@ -27,7 +28,27 @@ const userEmail = user?.email || "No email";
             // userName
         };
         console.log(listingData);
-        alert("✅ Listing submitted successfully!");
+        fetch('http://localhost:4000/addRmm', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(listingData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                !
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your Post is Successfully !",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                console.log("after coming", data)
+            })
+        // alert("Listing submitted successfully!");
         form.reset();
     };
 
@@ -114,7 +135,7 @@ const userEmail = user?.email || "No email";
                     {/* Description */}
                     <div className="col-span-full">
                         <label className="text-sm font-medium mb-1  items-center gap-2">
-                       Description
+                            Description
                         </label>
                         <textarea name="description" rows="4" className="w-full px-4 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400" required />
                     </div>
@@ -136,7 +157,7 @@ const userEmail = user?.email || "No email";
                     {/* Submit Button */}
                     <div className="col-span-full mt-4">
                         <button type="submit" className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
-                              Submit Listing
+                            Submit Listing
                         </button>
                     </div>
                 </form>

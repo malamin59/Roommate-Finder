@@ -4,12 +4,13 @@ import { AuthContext } from '../Context/AuthContext';
 import UserIcon from '../assets/NavbarIcon.webp'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './navbar.css'
 
 const Navbar = () => {
 const links = <>
     <li> <NavLink to="/"> Home </NavLink> </li>
     <li> <NavLink to="/addRoommate"> Add Roommate  </NavLink> </li>
-    <li> <NavLink to="/contact"> Contact </NavLink> </li>
+    <li> <NavLink to="/browseListings"> BrowseListings </NavLink> </li>
 </>
 
 const { user, logOut } = useContext(AuthContext);
