@@ -11,7 +11,11 @@ import PostRommMet from '../Pages/Post/PostRommMet';
 import BrowseListings from '../Pages/BrowseListings/BrowseListings';
 import PostDetailsPage from '../Pages/Detailspage/PostDetailsPage';
 import MyListing from '../Pages/MyListingPage/MyListing';
+import { use } from 'react';
+import { AuthContext } from '../Context/AuthContext';
 // import PrivateRout from '../Pages/PrivateRout/PrivateRout';
+
+
 
 const router = createBrowserRouter([
     {
@@ -47,7 +51,6 @@ const router = createBrowserRouter([
             },
             {
                 path: "/myListing",
-                loader: () => fetch('http://localhost:4000/myPost'),
                 element: <PrivateRoute>
                     <MyListing></MyListing>
                 </PrivateRoute>
