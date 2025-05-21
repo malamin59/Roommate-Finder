@@ -24,8 +24,8 @@ const AddListing = () => {
             description: form.description.value,
             contact: form.countryCode.value + form.contactNumber.value,
             availability: form.availability.value,
-            // userEmail,
-            // userName
+            userEmail,
+            userName
         };
         console.log(listingData);
         fetch('http://localhost:4000/addRmm', {

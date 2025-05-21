@@ -18,10 +18,16 @@ const PostDetailsPage = () => {
                         <p className='text-xl'> Lifestyle Preferences : {lifestyle}</p>
                         <p className='text-xl'>Room Type : {roomType} </p>
                         <p className='text-xl'>Availability : {availability}</p>
-                         <p className='text-xl'> Contact Info : {contact}</p>
+                        <p className='text-xl'> Contact Info : {contact}</p>
                         <p className='text-xl'> {description} </p>
+                              <p className='text-xl'> like : 2  </p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary bg-blue-700"> <BiLike /> Like</button>
+                            <button 
+                             className="btn btn-primary bg-blue-700">
+                                <BiLike />
+                                Like</button>
+                                {/* <p> count : </p> */}
+
                         </div>
                     </div>
                 </div>

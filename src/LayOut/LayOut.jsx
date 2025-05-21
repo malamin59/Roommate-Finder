@@ -10,6 +10,7 @@ import PrivateRoute from '../Components/Private/PrivateRoute';
 import PostRommMet from '../Pages/Post/PostRommMet';
 import BrowseListings from '../Pages/BrowseListings/BrowseListings';
 import PostDetailsPage from '../Pages/Detailspage/PostDetailsPage';
+import MyListing from '../Pages/MyListingPage/MyListing';
 // import PrivateRout from '../Pages/PrivateRout/PrivateRout';
 
 const router = createBrowserRouter([
@@ -45,6 +46,13 @@ const router = createBrowserRouter([
                 </PrivateRoute>
             },
             {
+                path: "/myListing",
+                loader: () => fetch('http://localhost:4000/myPost'),
+                element: <PrivateRoute>
+                    <MyListing></MyListing>
+                </PrivateRoute>
+            },
+            {
                 path: '/browseListings',
                 loader: () => fetch('http://localhost:4000/addRmmAll'),
                 Component: BrowseListings
@@ -52,7 +60,7 @@ const router = createBrowserRouter([
             {
                 path: 'users/:id',
                 loader: ({ params }) => fetch(`http://localhost:4000/addRmmAll/${params.id}`),
-                element:  <PrivateRoute>
+                element: <PrivateRoute>
                     <PostDetailsPage></PostDetailsPage>
                 </PrivateRoute>
             }

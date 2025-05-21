@@ -11,6 +11,7 @@ const links = <>
     <li> <NavLink to="/"> Home </NavLink> </li>
     <li> <NavLink to="/addRoommate"> Add Roommate  </NavLink> </li>
     <li> <NavLink to="/browseListings"> BrowseListings </NavLink> </li>
+    <li> <NavLink to="/myListing"> My Listing </NavLink> </li>
 </>
 
 const { user, logOut } = useContext(AuthContext);

@@ -31,7 +31,7 @@ const BrowseListings = () => {
                                 <td>{post.lifestyle}</td>
                                 <td>{post.contact}</td>
                                 <td className="text-right pr-4">
-                                    <Link to={`users/${post._id}`}>
+                                    <Link to={`/users/${post._id}`}>
                                         <button className="btn bg-blue-700 text-white btn-xs">
                                             See More</button>
                                     </Link>
