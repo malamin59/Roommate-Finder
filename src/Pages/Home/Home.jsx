@@ -1,43 +1,45 @@
-
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BannerSlider from '../Slayder/BannerSlider';
 import PostRommMet from '../Post/PostRommMet';
+import SectionOne from '../ExtraSection/SectionOne';
 
 const Home = () => {
   const postData = useLoaderData();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 lg:px-8 py-12">
+    <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
       {/* Hero Section */}
-      <section className="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-20 mb-20">
+      <section className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24 mb-24">
         {/* Text Content */}
-        <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-800 leading-tight">
-            Find Your Perfect <span className="text-blue-700">Roommate</span>
+        <div className="lg:w-1/2 text-center lg:text-left space-y-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            Find Your Ideal <span className="text-blue-700">Roommate</span>
           </h1>
-          <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed">
-            Discover <strong>RoomWow</strong> — a modern web platform that makes your roommate search experience simple and enjoyable.
-            Whether you're a student, a professional, or someone new to the city, this platform is designed just for you.
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+            Welcome to <strong className="text-blue-700">RoomWow</strong> — your trusted platform for finding the perfect roommate.
+            Whether you're a student, working professional, or new in town, we make your search seamless and stress-free.
           </p>
-          <button className="mt-6 bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-full transition duration-300">
-            Get Started Now
+          <button className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-medium text-lg py-3 px-8 rounded-full shadow-lg transition duration-300">
+            Start Your Journey
           </button>
         </div>
 
         {/* Banner Slider */}
-        <div className="lg:w-1/2 w-full">
+        <div className="lg:w-1/2 w-full shadow-lg rounded-lg overflow-hidden">
           <BannerSlider />
         </div>
       </section>
 
       {/* Posts Section */}
-      <section>
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 text-center">
-          Latest Roommate Posts
+      <section className="bg-gray-50 p-6 rounded-xl shadow-inner">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+          Latest Roommate Listings
         </h2>
         <PostRommMet postData={postData} />
       </section>
+      {/*  second section  */}
+      <SectionOne></SectionOne>
     </div>
   );
 };
