@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaUser, FaUsers } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import banner2 from '../../assets/image2.jpg';
 import banner5 from '../../assets/bnner5.jpg';
 import banner6 from '../../assets/bnner6.jpeg';
@@ -16,42 +16,22 @@ import banner17 from '../../assets/banner17.jpeg';
 
 const images = [
     banner2, banner5, banner6, banner7, banner8, banner9,
-    banner10, banner11, banner12, banner14, banner15, banner16, banner17
+    banner10, banner11, banner12, banner14, banner15, banner16, banner17,
 ];
 
 const styles = `
-@keyframes marquee {
-  0% { transform: translateX(0); }
+@keyframes scrollMarquee {
+  0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
 `;
 
-const containerStyle = {
-    overflow: 'hidden',
-    width: '100%',
-    marginBottom: '40px',
-};
-
-const marqueeAnimation = {
-    display: 'inline-block',
-    whiteSpace: 'nowrap',
-    animation: 'marquee 10s linear infinite',
-};
-
-const imageStyle = {
-    width: '240px',
-    height: '200px',
-    objectFit: 'cover',
-    margin: '0 8px',
-    borderRadius: '12px',
-    display: 'inline-block',
-};
-
-const SectionTow = () => {
+const SectionTwo = () => {
     return (
-        < >
+        <>
             <style>{styles}</style>
-            <div className="my-16 px-4 lg:px-8 max-w-6xl mx-auto text-center ">
+
+            <div className="my-16 px-4 lg:px-8 max-w-6xl mx-auto text-center">
                 <div className="flex justify-center items-center gap-3 mb-4">
                     <FaUser className="text-4xl text-black" />
                     <h2 className="text-4xl md:text-5xl font-extrabold text-black drop-shadow-md">
@@ -66,13 +46,20 @@ const SectionTow = () => {
                 </p>
             </div>
 
-            <div style={containerStyle}>
-                <div style={marqueeAnimation}>
-                    {images.map((img, index) => (
-                        <img key={index} src={img} alt={`banner-${index}`} style={imageStyle} />
-                    ))}
-                    {images.map((img, index) => (
-                        <img key={`dup-${index}`} src={img} alt={`banner-duplicate-${index}`} style={imageStyle} />
+            <div className="overflow-hidden w-full pb-10">
+                <div
+                    className="flex w-max"
+                    style={{
+                        animation: 'scrollMarquee 40s linear infinite',
+                    }}
+                >
+                    {[...images, ...images].map((img, index) => (
+                        <img
+                            key={index}
+                            src={img}
+                            alt={`community-${index}`}
+                            className="w-60 h-48 object-cover rounded-xl mx-2 shadow-md"
+                        />
                     ))}
                 </div>
             </div>
@@ -80,4 +67,4 @@ const SectionTow = () => {
     );
 };
 
-export default SectionTow;
+export default SectionTwo;

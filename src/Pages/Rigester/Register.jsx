@@ -38,7 +38,7 @@ const Register = () => {
         const hasUppercase = /[A-Z]/.test(password);
         const hasLowercase = /[a-z]/.test(password);
         const isLongEnough = password.length >= 6;
-        fetch('http://localhost:4000/users', {
+        fetch('https://my-mongo-project-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

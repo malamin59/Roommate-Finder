@@ -12,7 +12,7 @@ const Update = () => {
 //     const [users, setUsers] = useState([]);   
 //     useEffect(() => {
 //         if (user?.email) {
-//             fetch(`http://localhost:4000/myPost/${user.email}`)
+//             fetch(`https://my-mongo-project-server.vercel.app/myPost/${user.email}`)
 //                 .then(res => res.json())
 //                 .then(data => {
 //                     console.log(data);
@@ -182,7 +182,7 @@ export default Update;
 //   const handleSubmit = e => {
 //     e.preventDefault();
 
-//     fetch(`http://localhost:4000/myPost/${post._id}`, {
+//     fetch(`https://my-mongo-project-server.vercel.app/myPost/${post._id}`, {
 //       method: 'PUT',
 //       headers: { 'Content-Type': 'application/json' },
 //       body: JSON.stringify(formData)

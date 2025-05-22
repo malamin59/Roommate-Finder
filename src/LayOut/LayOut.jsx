@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: () => fetch('http://localhost:4000/addRmm'),
+                loader: () => fetch('https://my-mongo-project-server.vercel.app/addRmm'),
                 element: <Home></Home>
             }
             ,
@@ -57,19 +57,19 @@ const router = createBrowserRouter([
             },
             {
                 path: '/update/:id',
-                loader: ({ params }) => fetch(`http://localhost:4000/myPost/${params.id}`),
+                loader: ({ params }) => fetch(`https://my-mongo-project-server.vercel.app/myPost/${params.id}`),
                 element:( <PrivateRoute>
                     <Update></Update>
                 </PrivateRoute>)
             },
             {
                 path: '/browseListings',
-                loader: () => fetch('http://localhost:4000/addRmmAll'),
+                loader: () => fetch('https://my-mongo-project-server.vercel.app/addRmmAll'),
                 Component: BrowseListings
             },
             {
                 path: 'users/:id',
-                loader: ({ params }) => fetch(`http://localhost:4000/addRmmAll/${params.id}`),
+                loader: ({ params }) => fetch(`https://my-mongo-project-server.vercel.app/addRmmAll/${params.id}`),
                 element: <PrivateRoute>
                     <PostDetailsPage></PostDetailsPage>
                 </PrivateRoute>

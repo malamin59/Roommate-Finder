@@ -47,7 +47,7 @@ const SignIn = () => {
             .catch(error => {
                 console.log(error)
             })
-        fetch('http://localhost:4000/users', {
+        fetch('https://my-mongo-project-server.vercel.app/users', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

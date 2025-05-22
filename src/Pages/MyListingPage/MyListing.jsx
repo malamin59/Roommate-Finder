@@ -10,7 +10,7 @@ const MyListing = () => {
 
   useEffect(() => {
     if (!user?.email) return; 
-    fetch(`http://localhost:4000/myPost/${user.email}`)
+    fetch(`https://my-mongo-project-server.vercel.app/myPost/${user.email}`)
       .then(res => res.json())
       .then(data => {
         setUsers(data);
@@ -30,7 +30,7 @@ const MyListing = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/myPost/${id}`, { method: 'DELETE' })
+        fetch(`https://my-mongo-project-server.vercel.app/myPost/${id}`, { method: 'DELETE' })
           .then(res => res.json())
           .then(data => {
             if (data.deletedCount) {
