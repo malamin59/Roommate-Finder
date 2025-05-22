@@ -41,7 +41,7 @@ const Home = () => {
       </section>
       {/*  second section  */}
       <SectionOne></SectionOne>
-      <div className='mb-52'>
+      <div className='mb-12'>
         <SectionTow></SectionTow>
       </div>
     </div>

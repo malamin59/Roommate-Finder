@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/update/:id',
-                loader: ({ params }) => fetch(`https://my-mongo-project-server.vercel.app/myPost/${params.id}`),
+                loader: ({ params }) => fetch(`https://my-mongo-project-server.vercel.app/addRmmAll/${params.id}`),
                 element:( <PrivateRoute>
                     <Update></Update>
                 </PrivateRoute>)

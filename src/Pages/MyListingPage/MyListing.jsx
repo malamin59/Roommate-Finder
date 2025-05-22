@@ -55,7 +55,7 @@ const MyListing = () => {
   }
 
   return (
-    <div className="mt-12 mb-20 px-4 lg:px-12">
+    <div className="lg:mt-12 mt-20 mb-24 px-4 lg:px-12">
       <h2 className="text-3xl font-semibold mb-8 text-center text-blue-800">
         My Listings ({users.length})
       </h2>

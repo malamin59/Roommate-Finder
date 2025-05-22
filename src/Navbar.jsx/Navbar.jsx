@@ -61,16 +61,16 @@ return (
 
             {
                 user ? (
-                    <button className='btn bg-black text-white' onClick={handleLogOut}
+                    <button className='btn bg-black font-bold *: text-white' onClick={handleLogOut}
                     > LogOut</button>
                 ) : (
                     <div>
 
-                        <Link to="/register">
-                            <button className='btn bg-black text-white'>Register</button>
+                        <Link  to="/register">
+                            <button className='btn font-bold  bg-black text-white'>Register</button>
                         </Link>
-                        <Link to="/signin">
-                            <button className='btn bg-black text-white'>SignIn</button>
+                        <Link  to="/signin">
+                            <button className='btn font-bold bg-black text-white'>SignIn</button>
                         </Link>
                     </div>
                 )
