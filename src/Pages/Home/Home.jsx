@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import BannerSlider from '../Slayder/BannerSlider';
 import PostRommMet from '../Post/PostRommMet';
 import SectionOne from '../ExtraSection/SectionOne';
+import SectionTow from '../ExtraSection/SectionTow';
 
 const Home = () => {
   const postData = useLoaderData();
@@ -40,6 +41,9 @@ const Home = () => {
       </section>
       {/*  second section  */}
       <SectionOne></SectionOne>
+     <div className='mb-52'>
+       <SectionTow></SectionTow>
+     </div>
     </div>
   );
 };

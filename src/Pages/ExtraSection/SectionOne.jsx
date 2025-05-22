@@ -4,7 +4,7 @@ import { FaUserCheck, FaComments, FaLock, FaHandshake, FaRocket } from 'react-ic
 
 const WhyChoose = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-20">
+    <div className="max-w-7xl mx-auto px-4 py-10">
       {/* 🔁 Marquee Section */}
       <Marquee
         gradient={false}  
