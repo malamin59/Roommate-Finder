@@ -29,7 +29,8 @@ const styles = `
 const SectionTwo = () => {
     return (
         <>
-            <style>{styles}</style>
+           <div>
+             <style>{styles}</style>
 
             <div className="my-16 px-4 lg:px-8 max-w-6xl mx-auto text-center">
                 <div className="flex justify-center items-center gap-3 mb-4">
@@ -63,6 +64,8 @@ const SectionTwo = () => {
                     ))}
                 </div>
             </div>
+            
+           </div>
         </>
     );
 };

@@ -63,7 +63,7 @@ const SignIn = () => {
 
     return (
         <div>
-            <div className="card mx-auto lg:mt-25 my-40 bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div className="card mx-auto lg:mt-25 lg:my-40 my-4  mb-42 bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
                     <h1 className="text-4xl text-center font-bold">SignIn now!</h1>
                     <form onSubmit={handleSignUp}
