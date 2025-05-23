@@ -95,7 +95,7 @@ const PostDetailsPage = () => {
     setLikeCount(updatedLikes);
     setIsLiked(true);
     try {
-      const res = await fetch(`http://localhost:4000/addRmmAll/${_id}`, {
+      const res = await fetch(`https://my-mongo-project-server.vercel.app/addRmmAll/${_id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
