@@ -3,7 +3,7 @@ import { Fade, Slide, Zoom } from 'react-awesome-reveal';
 
 const ReactAwesome = () => {
   return (
-    <div className="p-10 text-center space-y-6">
+    <div className="p-5 text-center space-y-4">
          <Slide direction="left">
        <p className="text-gray-600 text-base md:text-lg leading-relaxed">
             Welcome to <strong className="text-blue-700">RoomWow</strong> — your trusted platform for finding the perfect roommate.

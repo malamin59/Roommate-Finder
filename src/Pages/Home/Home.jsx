@@ -12,11 +12,12 @@ const Home = () => {
   const postData = useLoaderData();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 lg:px-8">
+    <div className="max-w-7xl mx-auto px-4 lg:px-8 ">
       {/* Hero Section */}
-      <section className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24 mb-24">
+      
+      <section className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24 mb-16">
         {/* Text Content */}
-        <div className="lg:w-1/2 text-center lg:text-left space-y-6">
+        <div className="lg:w-1/2 text-center lg:text-left ">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
             {/* Typewriter Animation */}
             <Typewriter

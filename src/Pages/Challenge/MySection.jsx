@@ -11,8 +11,9 @@ import { Link } from 'react-router-dom';
 const MySection = () => {
     return (
       <div>
-          <div className="flex mb-20 flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-            <img className='w-6/12 lg:h-[500px] rounded' src={image} alt="" />
+        <h3 className='text-center text-4xl font-bold italic'> About Our Idol</h3>
+          <div className="flex mb-20 flex-col items-center justify-center mt-6 bg-gray-100 p-6">
+            <img className='lg:w-2/12 lg:h-[200px] rounded' src={image} alt="" />
             <h1 className="text-4xl font-bold text-center mb-4 mt-9">
                 Jhanker Vai{' '}
                 <span className="text-blue-600">
