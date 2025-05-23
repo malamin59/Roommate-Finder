@@ -6,6 +6,7 @@ import SectionOne from '../ExtraSection/SectionOne';
 import SectionTow from '../ExtraSection/SectionTow';
 import { Typewriter } from 'react-simple-typewriter';
 import MySection from '../Challenge/Mysection';
+import ReactAwesome from '../Challenge/ReactAwesome';
 
 const Home = () => {
   const postData = useLoaderData();
@@ -35,13 +36,7 @@ const Home = () => {
               delaySpeed={1500}
             />
           </h1>
-          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-            Welcome to <strong className="text-blue-700">RoomWow</strong> — your trusted platform for finding the perfect roommate.
-            Whether you're a student, working professional, or new in town, we make your search seamless and stress-free.
-          </p>
-          <button className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-medium text-lg py-3 px-8 rounded-full shadow-lg transition duration-300">
-            Start Your Journey
-          </button>
+        <ReactAwesome></ReactAwesome>
         </div>
 
         {/* Banner Slider */}
