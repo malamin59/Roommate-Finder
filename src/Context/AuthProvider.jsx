@@ -13,7 +13,7 @@ const provider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
-    const [loading,setLoading] =  useState(true)
+    const [loading, setLoading] = useState(true)
 
     // const [loading, setLoading] = useState(true);
     // console.log(loading , user)
@@ -27,10 +27,10 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logOut = () => {
-       return signOut(auth)
+        return signOut(auth)
     }
     // profile update 
-      const updateUser = (updatedData) => {
+    const updateUser = (updatedData) => {
         return updateProfile(auth.currentUser, updatedData)
     }
 
@@ -47,12 +47,12 @@ const AuthProvider = ({ children }) => {
     const userInfo = {
         createUser,
         signinUser,
-        logOut, 
+        logOut,
         provider,
         user,
         setUser,
         loading,
-        setLoading, 
+        setLoading,
         updateUser
     }
 

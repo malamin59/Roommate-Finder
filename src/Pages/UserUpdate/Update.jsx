@@ -38,15 +38,15 @@ const Update = () => {
     return (
         <div>
 
-            <div className=" lg:mt-8 mt-16 mb-28 bg-gray-100 flex justify-center items-center px-4 py-10">
+            <div className=" llg:mt-8 mt-16 mb-20 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex justify-center items-center px-4 py-10">
                 <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl p-8 md:p-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-10 flex items-center justify-center gap-2">
                         <FiHome size={32} /> Update Your Roommate Listing
-                    </h2>
+                    </h2> 
 
                     <form
                         onSubmit={handleUpdateListing}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl shadow-xl p-8 md:p-12">
                         {/* Room Details */}
                         <h3 className="col-span-full text-xl font-semibold text-indigo-600 mt-2 flex items-center gap-2">
                             <FiHome size={24} /> Room Details

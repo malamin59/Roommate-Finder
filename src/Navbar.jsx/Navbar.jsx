@@ -137,7 +137,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="" className="flex items-center gap-2">
           <img className='w-10' src={UserIcon} alt="Logo" />
           <span className="text-xl font-bold hidden sm:block">RoomMate Finder</span>
         </Link>

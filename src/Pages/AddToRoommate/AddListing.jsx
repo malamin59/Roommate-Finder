@@ -37,29 +37,28 @@ const AddListing = () => {
         })
             .then(res => res.json())
             .then(data => {
-                !
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Your Post is Successfully !",
+                        title: "Listing submitted successfully!",
                         showConfirmButton: false,
                         timer: 1500
                     });
 
                 console.log("after coming", data)
             })
-        // alert("Listing submitted successfully!");
+      
         form.reset();
     };
 
     return (
-        <div className=" lg:mt-8 mt-16 mb-20 bg-gray-100 flex justify-center items-center px-4 py-10">
+        <div className=" lg:mt-8 mt-16 mb-20 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex justify-center items-center px-4 py-10">
             <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl p-8 md:p-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-10 flex items-center justify-center gap-2">
                     <FiHome size={32} /> Add Your Roommate Listing
                 </h2>
 
-                <form onSubmit={handleAddListing} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form onSubmit={handleAddListing} className=" w-full max-w-4xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl shadow-xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Room Details */}
                     <h3 className="col-span-full text-xl font-semibold text-indigo-600 mt-2 flex items-center gap-2">
                         <FiHome size={24} /> Room Details
