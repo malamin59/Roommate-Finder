@@ -6,7 +6,7 @@ import { MapPin, CalendarDays, ArrowRight } from 'lucide-react';
 const PostRommMet = ({ postData }) => {
   return (
     <div className="my-20 px-4">
-     
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {postData.map((post) => (
           <div

@@ -43,3 +43,5 @@ A platform that helps individuals find compatible roommates based on location, b
 - **Loading Spinner** – Displayed during data fetching 
 
 ---
+
+

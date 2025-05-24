@@ -6,7 +6,7 @@ const BrowseListings = () => {
   console.log(allPosts);
 
   return (
-    <div className="lg:mt-12 mt-19 mb-20 px-4">
+    <div className="lg:mt- mt-2 mb-20 px-4">
       <div className="overflow-x-auto rounded-lg shadow-lg border border-gray-200">
         <table className="min-w-[800px] w-full table-auto border-collapse">
           <thead className="bg-gradient-to-r from-blue-600 to-purple-600 text-white sticky top-0">

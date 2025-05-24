@@ -12,10 +12,13 @@ const Register = () => {
     const registerWithPopUp = () => {
         signInWithPopup(auth, provider)
             .then(result => {
+                console.log(result)
                 Swal.fire({
-                    title: "Register SUccessfully !",
+                    position: "top-end",
                     icon: "success",
-                    draggable: true
+                    title: "Register Successfully!",
+                    showConfirmButton: false,
+                    timer: 1500
                 });
                 navigate('/')
             })
@@ -38,17 +41,6 @@ const Register = () => {
         const hasUppercase = /[A-Z]/.test(password);
         const hasLowercase = /[a-z]/.test(password);
         const isLongEnough = password.length >= 6;
-        fetch('https://my-mongo-project-server.vercel.app/users', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(usersData)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
         if (!isLongEnough) {
             toast.error("Password must be at least 6 characters long.");
             return;
