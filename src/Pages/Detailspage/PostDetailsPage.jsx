@@ -14,7 +14,7 @@ const PostDetailsPage = () => {
   } = postDetails;
   const currentUser = user?.email;
   const isPostOwner = currentUser === userEmail
-  console.log(postDetails)
+  // console.log(postDetails)
 
   const [likeCount, setLikeCount] = useState(likes);
   const [isLiked, setIsLiked] = useState(false);
@@ -41,19 +41,17 @@ const PostDetailsPage = () => {
   };
 
   return (
-    <div className="min-h-screen lg:mt-8 mt-15 bg-gradient-to-br from-blue-50 via-white to-purple-100 py-16 px-4">
+    <div className="min-h-screen lg:mt-1 mt-2 bg-gradient-to-br from-blue-50 via-white to-purple-100 py-16 px-4">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-10 relative overflow-hidden">
-
-        {/* Background Shapes */}
         <div className="absolute -top-10 -right-10 w-48 h-48 bg-blue-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse"></div>
         <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-purple-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse"></div>
 
         <h2 className="text-4xl font-bold text-center text-blue-700 mb-8">
           {title}
         </h2>
-        <p className="flex items-center gap-2">
-          <BiLike className="text-blue-600" />
-          <span className="font-semibold">Likes:</span> {likeCount}
+        <p className="flex items-center dark:text-blue-700 gap-2">
+          <BiLike className="text-blue-600 " />
+          <span className="font-semibold dark:text-blue-700">Likes:</span> {likeCount}
         </p>
         <div className="space-y-4 text-gray-700 text-lg">
           <p className="flex items-center gap-2">
@@ -76,7 +74,7 @@ const PostDetailsPage = () => {
             <BiCalendar className="text-pink-600" />
             <span className="font-semibold">Availability:</span> {availability}
           </p>
-       
+
 
           <p className="flex items-start gap-2">
             <FaRegStickyNote className="text-indigo-500 mt-1" />
@@ -103,18 +101,18 @@ const PostDetailsPage = () => {
             </button>
           )}
         </div>
-   {
-            isLiked ? (
-              <p className="flex items-center gap-2">
-                <BiPhone className="text-gray-600" />
-                <span className="font-semibold">Contact:</span> {contact}
-              </p>) : (
-              <p className="flex items-center gap-2 text-red-500 italic">
-                <BiPhone className="text-gray-600" />
-                <span className="font-semibold">Contact:</span> Like this post to view contact number
-              </p>
-            )
-          }
+        {
+          isLiked ? (
+            <p className="flex items-center dark:text-blue-700 gap-2">
+              <BiPhone className="text-gray-600" />
+              <span className="font-semibold">Contact:</span> {contact}
+            </p>) : (
+            <p className="flex items-center gap-2 dark:text-blue-700 text-red-500 italic">
+              <BiPhone className="text-gray-600" />
+              <span className="font-semibold ">Contact:</span> Like this post to view contact number
+            </p>
+          )
+        }
 
       </div>
     </div>

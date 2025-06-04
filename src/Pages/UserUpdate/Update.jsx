@@ -38,7 +38,7 @@ const Update = () => {
     return (
         <div>
 
-            <div className=" llg:mt-8 mt-16 mb-20 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex justify-center items-center px-4 py-10">
+            <div className=" lg:mt-1 mt-2 mb-20 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex justify-center items-center px-4 py-10">
                 <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl p-8 md:p-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-10 flex items-center justify-center gap-2">
                         <FiHome size={32} /> Update Your Roommate Listing

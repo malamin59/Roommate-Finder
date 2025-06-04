@@ -12,7 +12,7 @@ const Home = () => {
   const postData = useLoaderData();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 lg:px-8">
+    <div className="max-w-7xl mx-auto px-4 lg:px-">
       {/* Hero Section */}
       <section className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24 mb-16">
         {/* Text Content */}
@@ -22,7 +22,7 @@ const Home = () => {
               words={[
                 'Find Your Ideal Roommate',
                 'Welcome to our Roommate Finder Platform.',
-                'This is the most popular Roommate Finder Website in the world',
+                'It is the most popular Roommate Finder Website in the world',
               ]}
               loop={0}
               cursor

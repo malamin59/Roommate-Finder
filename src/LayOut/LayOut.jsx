@@ -13,6 +13,7 @@ import PostDetailsPage from '../Pages/Detailspage/PostDetailsPage';
 import MyListing from '../Pages/MyListingPage/MyListing';
 import { AuthContext } from '../Context/AuthContext';
 import Update from '../Pages/UserUpdate/Update';
+import Loading from '../Components/loading';
 // import PrivateRout from '../Pages/PrivateRout/PrivateRout';
 
 
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 loader: () => fetch('https://my-mongo-project-server.vercel.app/addRmm'),
-                element: <Home></Home>
+                element: <Home></Home>,
+                hydrateFallbackElement: <Loading></Loading>
             }
             ,
             {
@@ -58,14 +60,16 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 loader: ({ params }) => fetch(`https://my-mongo-project-server.vercel.app/addRmmAll/${params.id}`),
-                element:( <PrivateRoute>
+                element: (<PrivateRoute>
                     <Update></Update>
-                </PrivateRoute>)
+                </PrivateRoute>),
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/browseListings',
                 loader: () => fetch('https://my-mongo-project-server.vercel.app/addRmmAll'),
-                Component: BrowseListings
+                Component: BrowseListings,
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: 'users/:id',

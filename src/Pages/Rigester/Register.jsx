@@ -37,7 +37,7 @@ const Register = () => {
         const photo = formData.get('photo')
 
         const usersData = Object.fromEntries(formData.entries());
-        console.log(usersData)
+        // console.log(usersData)
         const hasUppercase = /[A-Z]/.test(password);
         const hasLowercase = /[a-z]/.test(password);
         const isLongEnough = password.length >= 6;
@@ -64,7 +64,7 @@ const Register = () => {
                 })
                 const user = result.user
                 setUser(user);
-                console.log(user)
+                // console.log(user)
                 navigate('/')
                 Swal.fire({
                     title: "Register Successfully",

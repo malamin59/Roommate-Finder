@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const BrowseListings = () => {
   const allPosts = useLoaderData();
-  console.log(allPosts);
+  // console.log(allPosts);
 
   return (
     <div className="lg:mt- mt-2 mb-20 px-4">
