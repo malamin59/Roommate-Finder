@@ -5,7 +5,7 @@ A web platform to help users find compatible roommates based on budget, lifestyl
 ---
 
 ## 🚀 Live Preview  
-👉 [Live Link](https://roommate-app.web.app)
+👉 [Live Link](https://my-mongo-auth-project.web.app)
 
 ---
 
