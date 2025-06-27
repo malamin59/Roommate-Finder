@@ -1,73 +1,76 @@
-// import useAuth from "../../Hooks/useAuth"; // your custom auth hook
-// import { useEffect, useState } from "react";
-// import useAxiosSecure from "../../Hooks/useAxiosSecure";
-
-import { use, useEffect, useState } from "react";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
+import { useLoaderData } from "react-router-dom";
+import { FaUsers, FaListAlt } from "react-icons/fa";
+import { MdPostAdd } from "react-icons/md";
 
 const OverviewPage = () => {
-  const { user } = use(AuthContext);
-
-  //   const { user } = ();
-  const axiosSecure = useAxiosSecure();
-  const [stats, setStats] = useState({
-    totalItems: 0,
-    myItems: 0,
-  });
+  const { user } = useContext(AuthContext);
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const data = useLoaderData();
 
   useEffect(() => {
-    const fetchStats = async () => {
-      const totalRes = await axiosSecure.get("/items/count");
-      const myRes = await axiosSecure.get(
-        `/items/my-count?email=${user.email}`
-      );
-      setStats({
-        totalItems: totalRes.data.count,
-        myItems: myRes.data.count,
-      });
-    };
-    fetchStats();
-  }, [axiosSecure, user]);
+    if (!user?.email) return;
+    fetch(`https://my-mongo-project-server.vercel.app/myPost/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [user]);
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6">Dashboard Overview</h2>
+      <h2 className="text-3xl font-bold text-center mb-10 text-blue-700">
+        Dashboard Overview
+      </h2>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 text-center">
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-            Total Items
-          </h3>
-          <p className="text-3xl font-bold text-blue-600 mt-2">
-            {stats.totalItems}
-          </p>
+      {/* Stat Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* Total Posts */}
+        <div className="bg-gradient-to-r from-blue-100 to-blue-300 rounded-xl shadow p-6 text-center hover:shadow-xl transition">
+          <div className="flex justify-center text-5xl text-blue-700 mb-3">
+            <FaListAlt />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-700 mb-1">Total Posts</h3>
+          <p className="text-4xl font-bold text-blue-800">{data.length}</p>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 text-center">
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-            My Items
-          </h3>
-          <p className="text-3xl font-bold text-purple-600 mt-2">
-            {stats.myItems}
-          </p>
+
+        {/* My Posts */}
+        <div className="bg-gradient-to-r from-purple-100 to-purple-300 rounded-xl shadow p-6 text-center hover:shadow-xl transition">
+          <div className="flex justify-center text-5xl text-purple-700 mb-3">
+            <MdPostAdd />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-700 mb-1">My Posts</h3>
+          <p className="text-4xl font-bold text-purple-800">{users.length}</p>
+        </div>
+
+        {/* User Info Count or Total Users */}
+        <div className="bg-gradient-to-r from-green-100 to-green-300 rounded-xl shadow p-6 text-center hover:shadow-xl transition">
+          <div className="flex justify-center text-5xl text-green-700 mb-3">
+            <FaUsers />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-700 mb-1">Logged in</h3>
+          <p className="text-lg font-bold text-green-800">{user?.displayName || "Anonymous"}</p>
         </div>
       </div>
 
       {/* User Info */}
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
-        <h3 className="text-xl font-semibold mb-4">Logged-in User Info</h3>
-        <p>
-          <strong>Name:</strong> {user.displayName}
+        <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">User Information</h3>
+        <p className="text-gray-700 dark:text-gray-200">
+          <strong>Name:</strong> {user?.displayName}
         </p>
-        <p>
-          <strong>Email:</strong> {user.email}
+        <p className="text-gray-700 dark:text-gray-200">
+          <strong>Email:</strong> {user?.email}
         </p>
-        {user.photoURL && (
+        {user?.photoURL && (
           <img
             src={user.photoURL}
             alt="User"
-            className="w-20 mt-4 rounded-full"
+            className="w-24 h-24 mt-4 rounded-full border-4 border-blue-500"
           />
         )}
       </div>

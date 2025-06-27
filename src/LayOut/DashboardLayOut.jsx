@@ -38,13 +38,13 @@ const DashboardLayOut = () => {
       {/* Sidebar */}
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-60 min-h-full bg-base-200 text-base-content">
+        <ul className="menu p-4 w-60 min-h-full  bg-base-200 text-base-content">
           {" "}
           <a href="/">
             {" "}
             <img className="w-12 h-12 rounded " src={UserIcon} alt="" />
           </a>
-          <li>
+          <li >
             <NavLink
               to="/dashboard"
               className={({ isActive }) =>

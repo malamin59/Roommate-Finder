@@ -10,7 +10,7 @@ import PostRommMet from "../Pages/Post/PostRommMet";
 import BrowseListings from "../Pages/BrowseListings/BrowseListings";
 import PostDetailsPage from "../Pages/Detailspage/PostDetailsPage";
 import MyListing from "../Pages/MyListingPage/MyListing";
-import { AuthContext } from "../Context/AuthContext";
+// import { AuthContext } from "../Context/AuthContext";
 import Update from "../Pages/UserUpdate/Update";
 import Loading from "../Components/loading";
 import PhotoPage from "../Pages/Mypage/PhotoPage";
@@ -133,6 +133,8 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: OverviewPage,
+        loader: () =>
+          fetch("https://my-mongo-project-server.vercel.app/addRmmAll"),
       },
       {
         path: "myListingPage",
@@ -145,15 +147,16 @@ const router = createBrowserRouter([
           fetch("https://my-mongo-project-server.vercel.app/addRmmAll"),
         Component: BroseCollection,
       },
-     
-       {
+
+      {
         path: "myListing",
         element: (
           <PrivateRoute>
             <MyListing></MyListing>
           </PrivateRoute>
-        )},
-        {
+        ),
+      },
+      {
         path: "addRoommate",
         element: (
           <PrivateRoute>

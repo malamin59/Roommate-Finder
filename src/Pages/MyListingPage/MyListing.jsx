@@ -1,12 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Swal from 'sweetalert2';
-import { AuthContext } from '../../Context/AuthContext';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Context/AuthContext";
+import { Link } from "react-router-dom";
 
-const   MyListing = () => {
-
-
-
+const MyListing = () => {
   const { user } = useContext(AuthContext);
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,8 +11,8 @@ const   MyListing = () => {
   useEffect(() => {
     if (!user?.email) return;
     fetch(`https://my-mongo-project-server.vercel.app/myPost/${user.email}`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setUsers(data);
         setLoading(false);
       })
@@ -33,11 +30,13 @@ const   MyListing = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://my-mongo-project-server.vercel.app/myPost/${id}`, { method: 'DELETE' })
-          .then(res => res.json())
-          .then(data => {
+        fetch(`https://my-mongo-project-server.vercel.app/myPost/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
             if (data.deletedCount) {
-              setUsers(users.filter(user => user._id !== id));
+              setUsers(users.filter((user) => user._id !== id));
               Swal.fire({
                 title: "Deleted!",
                 text: "Your listing has been deleted.",
@@ -67,7 +66,14 @@ const   MyListing = () => {
         <table className="table-auto w-full min-w-[800px] border-collapse border border-gray-300">
           <thead className="bg-blue-100">
             <tr>
-              {['Location', 'Rent', 'Room Type', 'Availability', 'Lifestyle', 'Action'].map((title, i) => (
+              {[
+                "Location",
+                "Rent",
+                "Room Type",
+                "Availability",
+                "Lifestyle",
+                "Action",
+              ].map((title, i) => (
                 <th
                   key={i}
                   className="border border-gray-300 text-left px-4 py-3 text-lg font-medium text-gray-700"
@@ -98,19 +104,19 @@ const   MyListing = () => {
                   {/* <td className="px-4 py-3">{post.lifestyle}</td> */}
                   <td className="px-4 py-3">{post.contact}</td>
                   <td className="px-4 py-3 text-right space-x-2">
-                  <div className='flex gap-1'>
+                    <div className="flex gap-1">
                       <Link to={`/update/${post._id}`}>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-sm transition">
-                        Update
+                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-sm transition">
+                          Update
+                        </button>
+                      </Link>
+                      <button
+                        onClick={() => handleDelete(post._id)}
+                        className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md text-sm transition"
+                      >
+                        Delete
                       </button>
-                    </Link>
-                    <button
-                      onClick={() => handleDelete(post._id)}
-                      className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md text-sm transition"
-                    >
-                      Delete
-                    </button>
-                  </div>
+                    </div>
                   </td>
                 </tr>
               ))
