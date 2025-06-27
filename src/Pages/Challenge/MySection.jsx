@@ -3,8 +3,9 @@ import Lottie from "lottie-react";
 import animationData from "../../assets/animation.json";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import image from "../../assets/jhankarvai.jpeg";
+import image from "../../assets/banner7.jpeg";
 import { Link } from "react-router-dom";
+// import imageR from '../../assets/'
 import {
   FaWifi, FaBath, FaUniversity, FaFemale, FaBriefcase,
   FaUtensils, FaCity, FaCouch, FaBox, FaLock
@@ -39,7 +40,7 @@ const MySection = () => {
   return (
     <div className="max-h-[70vh] overflow-hidden rounded-xl shadow-inner bg-gray-100 px-4 py-6">
       <h3 className="text-center text-3xl font-bold italic text-gray-800 mb-6">
-      What is important of Roommate
+      Why are roommates important?
       </h3>
 
       <div className="flex flex-col items-center justify-center gap-4">

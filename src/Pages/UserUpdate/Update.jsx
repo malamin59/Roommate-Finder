@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const Update = () => {
     const updateUser = useLoaderData();
     const { _id } = updateUser
-    console.log(updateUser)
+    // console.log(updateUser)
     const handleUpdateListing = e => {
         e.preventDefault();
         const form = e.target;

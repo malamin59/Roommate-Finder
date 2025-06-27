@@ -34,7 +34,7 @@ const PostDetailsPage = () => {
         body: JSON.stringify({ likes: updatedLikes }),
       });
       const data = await res.json();
-      console.log('Like updated:', data);
+      // console.log('Like updated:', data);
     } catch (err) {
       console.error('Failed to update like:', err);
     }
