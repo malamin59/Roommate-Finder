@@ -6,8 +6,7 @@ import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import image from '../../assets/jhankarvai.jpeg'
 import { Link } from 'react-router-dom';
-// import ReactAwesome from './ReactAwesome';
-
+// import ReactAwesome from './ReactAwesome';  
 const MySection = () => {
     return (
       <div>

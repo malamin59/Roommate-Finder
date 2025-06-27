@@ -7,6 +7,8 @@ import SectionTow from '../ExtraSection/SectionTow';
 import { Typewriter } from 'react-simple-typewriter';
 import MySection from '../Challenge/Mysection';
 import ReactAwesome from '../Challenge/ReactAwesome';
+import HowItWorks from '../ExtraPage/HowItWorks';
+import Testimonials from '../ExtraPage/Testimonials ';
 
 const Home = () => {
   const postData = useLoaderData();
@@ -56,7 +58,10 @@ const Home = () => {
       </div>
       <div>
         <MySection />
+      <Testimonials />
+         <HowItWorks />
       </div>
+
     </div>
   );
 };

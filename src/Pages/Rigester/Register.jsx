@@ -66,7 +66,7 @@ const Register = () => {
                 setUser(user);
                 // console.log(user)
                 navigate('/')
-                Swal.fire({
+                Swal.fire({ 
                     title: "Register Successfully",
                     icon: "success",
                     draggable: true

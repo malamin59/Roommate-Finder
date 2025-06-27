@@ -14,6 +14,8 @@ import MyListing from '../Pages/MyListingPage/MyListing';
 import { AuthContext } from '../Context/AuthContext';
 import Update from '../Pages/UserUpdate/Update';
 import Loading from '../Components/loading';
+import PhotoPage from '../Pages/Mypage/PhotoPage';
+import AllPhotoPage from '../Pages/Mypage/AllPhotoPage';
 // import PrivateRout from '../Pages/PrivateRout/PrivateRout';
 
 
@@ -57,6 +59,22 @@ const router = createBrowserRouter([
                     <MyListing></MyListing>
                 </PrivateRoute>
             },
+            {
+                path: 'allPhotoPage',
+                element: <PrivateRoute>
+                    <AllPhotoPage />
+                </PrivateRoute>
+            }
+            ,
+            {
+                path: 'myPage',
+                element: (
+                    <PrivateRoute>
+                        <PhotoPage></PhotoPage>
+                    </PrivateRoute>
+                )
+            },
+
             {
                 path: '/update/:id',
                 loader: ({ params }) => fetch(`https://my-mongo-project-server.vercel.app/addRmmAll/${params.id}`),
