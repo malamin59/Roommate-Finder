@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/AuthContext';
 import { Link } from 'react-router-dom';
 
-const MyListing = () => {
+const   MyListing = () => {
 
 
 
@@ -67,7 +67,7 @@ const MyListing = () => {
         <table className="table-auto w-full min-w-[800px] border-collapse border border-gray-300">
           <thead className="bg-blue-100">
             <tr>
-              {['Location', 'Rent', 'Room Type', 'Availability', 'Lifestyle', 'Contact Info', 'Action'].map((title, i) => (
+              {['Location', 'Rent', 'Room Type', 'Availability', 'Lifestyle', 'Action'].map((title, i) => (
                 <th
                   key={i}
                   className="border border-gray-300 text-left px-4 py-3 text-lg font-medium text-gray-700"
@@ -89,16 +89,17 @@ const MyListing = () => {
               users.map((post) => (
                 <tr
                   key={post._id}
-                  className="hover:bg-blue-50 border-b border-gray-200"
+                  className="hover:bg-blue-50 dark:hover:bg-blue-500 border-b border-gray-200"
                 >
                   <td className="px-4 py-3">{post.location}</td>
                   <td className="px-4 py-3">{post.rent}</td>
                   <td className="px-4 py-3">{post.roomType}</td>
                   <td className="px-4 py-3">{post.availability}</td>
-                  <td className="px-4 py-3">{post.lifestyle}</td>
+                  {/* <td className="px-4 py-3">{post.lifestyle}</td> */}
                   <td className="px-4 py-3">{post.contact}</td>
                   <td className="px-4 py-3 text-right space-x-2">
-                    <Link to={`/update/${post._id}`}>
+                  <div className='flex gap-1'>
+                      <Link to={`/update/${post._id}`}>
                       <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-sm transition">
                         Update
                       </button>
@@ -109,6 +110,7 @@ const MyListing = () => {
                     >
                       Delete
                     </button>
+                  </div>
                   </td>
                 </tr>
               ))

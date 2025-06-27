@@ -19,7 +19,7 @@ const BannerSlider = () => {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto mt-8 px-2 pb-12">
+    <div className="w-full max-w-5xl mx-auto mt-4 px-2 pb-7">
       <Slider {...settings}>
         <div className="relative h-[400px] rounded-lg overflow-hidden">
           <img src={banner4} alt="Banner" className="w-full h-full object-cover brightness-75" />

@@ -13,5 +13,7 @@ color: whitesmoke;
 .nav-link:hover,
 .nav-link.active {
   background-color: #000000;
+
+  
   color: white !important;
 }

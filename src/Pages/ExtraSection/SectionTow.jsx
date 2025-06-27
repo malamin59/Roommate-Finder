@@ -34,12 +34,12 @@ const SectionTwo = () => {
 
             <div className="my-16 px-4 lg:px-8 max-w-6xl mx-auto text-center">
                 <div className="flex justify-center items-center gap-3 mb-4">
-                    <FaUser className="text-4xl text-black" />
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-black drop-shadow-md">
+                    <FaUser className="text-4xl text-black dark:text-blue-600 " />
+                    <h2 className="text-4xl md:text-5xl dark:text-blue-600 font-extrabold text-black drop-shadow-md">
                         Our Community in Action
                     </h2>
                 </div>
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-lg md:text-xl dark:text-white  text-gray-600 leading-relaxed max-w-3xl mx-auto">
                     Take a look at some amazing moments from our community. Whether it's{' '}
                     <span className="text-indigo-600 font-medium">finding the perfect roommate</span> or{' '}
                     <span className="text-indigo-600 font-medium">making lifelong memories</span>, we're proud

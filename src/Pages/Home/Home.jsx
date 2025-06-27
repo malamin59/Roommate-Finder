@@ -14,9 +14,9 @@ const Home = () => {
   const postData = useLoaderData();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 lg:px-">
+    <div className="max-w-7xl mx-auto px-4 ">
       {/* Hero Section */}
-      <section className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24 mb-16">
+      <section className="flex flex-col-reverse mt-2 lg:flex-row items-center gap-12 lg:gap-24 mb-7">
         {/* Text Content */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
